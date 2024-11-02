@@ -40,7 +40,7 @@ COPY 00_data /srv/shiny-server/00_data
 # Copy images
 COPY www /srv/shiny-server/www
 
-EXPOSE 5000
+EXPOSE 8080
 
 USER shiny
 
