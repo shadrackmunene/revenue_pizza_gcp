@@ -18,7 +18,7 @@ jobs:
       run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag revenue_pizza_gcp:latest
+      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/revenue_pizza_gcp:latest
 
     - name: Push the Docker image (latest tag)
-      run: docker push revenue_pizza_gcp:latest
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/revenue_pizza_gcp:lates
